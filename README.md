@@ -14,6 +14,7 @@ Just need to do below steps,you can finish your individual calculator.
 All the arithmetic logic have been packaged in the calculator core, to achieve complete decoupling, UI needn't to know any about arithmetic logic.
 
 ####This core split calculator's button as three function block.
+![](https://lh4.googleusercontent.com/-ZhnrNLE6EBM/VN3IDJMa9II/AAAAAAAADV0/-zg20vEn7qw/w1128-h917-no/calculator_setting.jpg)<br>
 Let's see it as below:
 - 1.Number button:
   - 0-9
