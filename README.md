@@ -1,6 +1,8 @@
 # CalculatorCore
 Calculator core by Java, and provide UI example(Jframe).
 
+You can download all source code,or just download CalculatorCore.jar
+
 ####Use this calculator core to create calculator app  easily.
 Just need to do below steps,you can finish your individual calculator.
 
@@ -24,6 +26,14 @@ Let's see it as below:
 [is Immediate] mean this button will calculate result immediately,like:Sqrt(x),1/x.<br>
 [not Immediate] mean this button will wait second input value then calculate result,like:x+y,x-y.
 
+####Calculator Core main java
+```
+CalculatorCore core = new CalculatorCore();
+double inputValue = core.inputNumber(number);
+	   inputValue = core.useModifyInputValueFunction(function);
+double outputValue = core.useCountOutputValueFunction(function);
+
+```
 ####API provide interface for UI implements
 ```
 public interface CalculatorUiClick {
