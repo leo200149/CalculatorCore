@@ -3,7 +3,7 @@ Calculator core by Java, and provide UI example(Jframe).
 
 You can download all source code,or just download CalculatorCore.jar
 
-####Use this calculator core to create calculator app  easily.
+### Use this calculator core to create calculator app  easily.
 Just need to do below steps,you can finish your individual calculator.
 
   - 1.Build your User interface layout.
@@ -13,30 +13,34 @@ Just need to do below steps,you can finish your individual calculator.
  
 All the arithmetic logic have been packaged in the calculator core, to achieve complete decoupling, UI needn't to know any about arithmetic logic.
 
-####This core split calculator's button as three function block.
+### This core split calculator's button as three function block.
+
 ![](https://lh4.googleusercontent.com/-ZhnrNLE6EBM/VN3IDJMa9II/AAAAAAAADV0/-zg20vEn7qw/w1128-h917-no/calculator_setting.jpg)<br>
 Let's see it as below:
 - 1.Number button:
-  - 0-9
+  - `0-9`
 - 2.Input function button: 
   - C,CE,Backspace,Dot,Reverse.
 - 3.Count function button: 
-  - is Immediate: Equal(=),Reciprocal(1/x),Sqrt
-  - not Immediate: Four operations(+-*/),Remainder(%)
+  - is Immediate: Equal(`=`),Reciprocal(`1/x`),Sqrt
+  - not Immediate: Four operations(`+-*/`),Remainder(`%`)
 
-[is Immediate] mean this button will calculate result immediately,like:Sqrt(x),1/x.<br>
-[not Immediate] mean this button will wait second input value then calculate result,like:x+y,x-y.
+[is Immediate] mean this button will calculate result immediately,like:Sqrt(`x`),`1/x`.<br>
+[not Immediate] mean this button will wait second input value then calculate result,like:`x+y`,`x-y`.
 
-####Calculator Core main java
-```
+### Calculator Core main java
+
+```java
 CalculatorCore core = new CalculatorCore();
 double inputValue = core.inputNumber(number);
 	   inputValue = core.useModifyInputValueFunction(function);
 double outputValue = core.useCountOutputValueFunction(function);
 
 ```
-####API provide interface for UI implements
-```
+
+### API provide interface for UI implements
+
+```java
 public interface CalculatorUiClick {
 	/**
 	 * Number button click
@@ -56,8 +60,10 @@ public interface CalculatorUiClick {
 	public void clickBtnCountOutputFunction(ArithmeticCore arithmeticCore);
 }
 ```
+
 Let's see example as below: this is UI  by JFrame.
-```
+
+```java
 public class CalculatorUIFrame extends JFrame implements CalculatorUiClick{
 	
 	private JTextField txtShow;
@@ -89,8 +95,9 @@ public class CalculatorUIFrame extends JFrame implements CalculatorUiClick{
 }
 ```
 
-####If the preset function not enough,you can also implements interface ArithmeticCore.
-```
+### If the preset function not enough,you can also implements interface ArithmeticCore.
+
+```java
 package edu.hyc.core.arithmetic;
 
 public interface ArithmeticCore {
@@ -101,8 +108,9 @@ public interface ArithmeticCore {
 }
 ```
 
-Let's see example as below: this sample is when button Click, will  count x^2.
-```
+Let's see example as below: this sample is when button Click, will  count `x^2`.
+
+```java
 import edu.hyc.core.arithmetic.ArithmeticCore;
 
 public class SquareArithmeticCore implements ArithmeticCore {
@@ -119,7 +127,7 @@ public class SquareArithmeticCore implements ArithmeticCore {
 }
 ```
 
-```
+```java
 JButton btnTest = new JButton("x^2");
 btnTest.setToolTipText("TEST");
 btnTest.addActionListener(new ActionListener() {
